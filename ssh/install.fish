@@ -8,3 +8,5 @@ switch (uname)
 case Darwin
 	grep -q "UseKeychain yes" ~/.ssh/config || echo -e '\nHost *\n  UseKeychain yes\n' >> ~/.ssh/config
 end
+
+fish_ssh_agent

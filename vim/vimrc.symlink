@@ -50,7 +50,7 @@ Plug 'luochen1990/rainbow'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'cocopon/iceberg.vim'
 "Plug 'morhetz/gruvbox'
-Plug 'sainnhe/everforest'
+Plug 'dracula/vim', {'as': 'dracula'}
 
 
 " Editing tools
@@ -95,17 +95,17 @@ set mouse=a                 " mouse scrolling and enterin visual mode
 set autoindent              " indent a new line the same amount as the line just typed
 set termguicolors           " set term gui colors
 set autoread                " auto reload files on changes
-set scrolloff=3				" keep 3 context lines around the viewport
-set colorcolumn=120			" highlight column 120
-set ls=2					" always show status bar
+set scrolloff=3             " keep 3 context lines around the viewport
+let cc=120                  " highlight column 120
+set ls=2                    " always show status bar
 
 " Backup
 "execute "set directory=" . g:vim_home_path . "/swap"
 "execute "set backupdir=" . g:vim_home_path . "/backup"
 "execute "set undodir="   . g:vim_home_path . "/undo"
-set backup
-set undofile
-set writebackup
+"set backup
+"set undofile
+"set writebackup
 
 " Search settings
 set hlsearch    " highlight results
@@ -167,8 +167,7 @@ if has("termguicolors")
   set termguicolors
 endif
 
-let g:everforest_background = 'hard'
-colorscheme everforest
+colorscheme dracula
 
 " Toggle Quickfix and Location lists
 function! GetBufferList()
@@ -483,3 +482,4 @@ let g:floaterm_keymap_new = '<leader>tn'
 let g:floaterm_keymap_prev = '<leader>tk'
 let g:floaterm_keymap_next = '<leader>tj'
 
+set cc=120
