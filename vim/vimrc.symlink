@@ -10,6 +10,9 @@ Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 
 " Languages
 Plug 'fatih/vim-go'
@@ -424,7 +427,7 @@ nmap <Leader>s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 
 " Find char (bi-directional)
-map  <Leader>f <Plug>(easymotion-bd-f)
+"map  <Leader>f <Plug>(easymotion-bd-f)
 
 " Move to line
 nmap <Leader>L <Plug>(easymotion-overwin-line)

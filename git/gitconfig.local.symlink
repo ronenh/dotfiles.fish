@@ -63,9 +63,6 @@
 [submodule]
 	fetchJobs = 4
 
-[commit]
-	template = ~/.dotfiles/git/template.txt
-
 [log]
 	showSignature = false
 
