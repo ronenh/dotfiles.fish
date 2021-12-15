@@ -1,14 +1,13 @@
 {
-	"editor.fontSize": 18,
+	"editor.fontSize": 11,
 	"editor.fontLigatures": true,
 	"editor.rulers": [
-		80,
 		120
 	],
 	"editor.tabSize": 4,
-	"editor.trimAutoWhitespace": true,
+	"editor.trimAutoWhitespace": false,
 	"editor.tabCompletion": "on",
-	"editor.fontFamily": "'Inconsolata', Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontFamily": "'Hack', Menlo, Monaco, 'Courier New', monospace",
 	"editor.smoothScrolling": true,
 	"editor.formatOnSave": true,
 	"editor.inlineSuggest.enabled": true,
@@ -22,7 +21,6 @@
 	"files.autoSave": "onFocusChange",
 	"extensions.autoUpdate": true,
 	"window.title": "${activeEditorMedium}${separator}${rootName}",
-	"files.trimTrailingWhitespace": true,
 	"extensions.ignoreRecommendations": false,
 	"search.exclude": {
 		"**/node_modules": true,
@@ -83,8 +81,8 @@
 	"workbench.preferredDarkColorTheme": "Dracula",
 	"files.insertFinalNewline": true,
 	"workbench.colorTheme": "Dracula",
-	"workbench.sideBar.location": "right",
-	"debug.console.fontSize": 16,
+	"workbench.sideBar.location": "left",
+	"debug.console.fontSize": 11,
 	"diffEditor.codeLens": true,
 	"remote.SSH.remotePlatform": {
 		"darkstar.local": "linux"
@@ -108,9 +106,9 @@
 	},
 	"redhat.telemetry.enabled": false,
 	"yaml.format.enable": false,
-	"terminal.integrated.fontFamily": "'Inconsolata Nerd Font Mono'",
+	"terminal.integrated.fontFamily": "'Hack Nerd Font'",
 	"terminal.external.osxExec": "iTerm.app",
-	"terminal.integrated.fontSize": 18,
+	"terminal.integrated.fontSize": 11,
 	"terminal.integrated.cursorBlinking": true,
 	"terminal.integrated.inheritEnv": true,
 	"terminal.integrated.cursorStyle": "line",
@@ -138,5 +136,8 @@
 	},
 	"security.workspace.trust.banner": "never",
 	"security.workspace.trust.startupPrompt": "never",
-	"security.workspace.trust.enabled": false
+	"security.workspace.trust.enabled": false,
+	"vim.leader": ",",
+	"vim.easymotion": true,
+	"vim.smartRelativeLine": true
 }

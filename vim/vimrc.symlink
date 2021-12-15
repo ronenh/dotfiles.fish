@@ -3,9 +3,6 @@ filetype off                  " required
 
 call plug#begin(stdpath('data') . '/plugged')
 
-" theme
-Plug 'dracula/vim', {'as': 'dracula'}
-
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -58,11 +55,11 @@ Plug 'dracula/vim', {'as': 'dracula'}
 
 " Editing tools
 Plug 'scrooloose/nerdcommenter'   " Code commenter
-"Plug 'tpope/vim-surround'         " Quoting/parenthesizing
-"Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'         " Quoting/parenthesizing
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/yaifa.vim'       " Auto detect indentation
 Plug 'godlygeek/tabular'           " Align text
-"Plug 'Raimondi/delimitMate'        " Auto close quotes/parentheses
+Plug 'Raimondi/delimitMate'        " Auto close quotes/parentheses
 Plug 'jiangmiao/auto-pairs'
 
 
@@ -83,12 +80,8 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 
 " vim-autoformat
 Plug 'Chiel92/vim-autoformat'
-call plug#end()
-
 
 call plug#end()
-
-
 
 
 let mapleader=","           " The <leader> key
@@ -99,7 +92,6 @@ set autoindent              " indent a new line the same amount as the line just
 set termguicolors           " set term gui colors
 set autoread                " auto reload files on changes
 set scrolloff=3             " keep 3 context lines around the viewport
-let cc=120                  " highlight column 120
 set ls=2                    " always show status bar
 
 " Backup
@@ -484,5 +476,3 @@ let g:floaterm_keymap_toggle = '<leader>tt'
 let g:floaterm_keymap_new = '<leader>tn'
 let g:floaterm_keymap_prev = '<leader>tk'
 let g:floaterm_keymap_next = '<leader>tj'
-
-set cc=120
