@@ -110,7 +110,3 @@
 
 [url "git@github.com:aserto-dev"]
 	insteadOf = https://github.com/aserto-dev
-
-[url "git@github.com:"]
-	insteadOf = http://github.com/
-	insteadOf = https://github.com/

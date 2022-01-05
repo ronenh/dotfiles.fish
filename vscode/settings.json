@@ -139,5 +139,8 @@
 	"security.workspace.trust.enabled": false,
 	"vim.leader": ",",
 	"vim.easymotion": true,
-	"vim.smartRelativeLine": true
+	"vim.smartRelativeLine": true,
+	"compareFolders.excludeFilter": [
+		"**/.git"
+	]
 }
