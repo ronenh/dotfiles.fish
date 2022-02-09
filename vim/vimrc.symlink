@@ -13,7 +13,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 
 " Languages
 Plug 'fatih/vim-go'
-Plug 'python-mode/python-mode'    " Python
+"Plug 'python-mode/python-mode'    " Python
 Plug 'pangloss/vim-javascript'    " JavaScript
 Plug 'leafgarland/typescript-vim' " TypeScript
 Plug 'maxmellon/vim-jsx-pretty'   " JSX
@@ -33,6 +33,7 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 
 " IDE
@@ -203,8 +204,15 @@ nnoremap <Leader>rm :call delete(@%)
 " yank to clipboard by default
 set clipboard=unnamed
 
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " more natural split opening
 set splitbelow
+set splitright
 
 nmap <silent> <leader>z :bprevious<CR>:bdelete #<CR>
 
