@@ -106,6 +106,7 @@ function install_dotfiles
 		or abort nvim
 	link_file $DOTFILES_ROOT/fish/config.fish $HOME/.config/fish/config.fish backup
 		or abort fish
+	link_file $DOTFILES_ROOT/vifm/vifmrc $HOME/.config/vifm/vifmrc backup
 end
 
 curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
