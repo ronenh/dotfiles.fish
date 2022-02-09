@@ -6,6 +6,9 @@ format = "[$duration]($style) "
 read_only = " "
 truncate_to_repo = false
 
+[status]
+disabled = false
+
 [git_branch]
 symbol = " "
 
@@ -95,3 +98,9 @@ symbol = " "
 
 [swift]
 symbol = "ﯣ "
+
+[custom.aserto]
+command = 'echo $ASERTO_ENV'
+files = ["magefile.go"]
+style = "blue"
+format = '[(in Aserto $output )]($style)'
