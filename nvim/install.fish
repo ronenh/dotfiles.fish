@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
-function vim
-    nvim $argv
-end
+abbr -a vim 'nvim'
 
-funcsave vim
+# Use nvim as man pager
+set -Ux MANPAGER "/bin/sh -c \"col -bx | nvim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
