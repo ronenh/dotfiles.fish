@@ -28,6 +28,7 @@ Plug 'dag/vim-fish'               " Fish shell
 
 " CoC and plugins
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
@@ -35,9 +36,11 @@ Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
+" Snippets
+Plug 'honza/vim-snippets'
 
 " IDE
-Plug 'scrooloose/nerdtree'            " File browser (F3)
+Plug 'preservim/nerdtree'            " File browser (F3)
 Plug 'majutsushi/tagbar'              " Class/module browser (F4)
 Plug 'jeetsukumaran/vim-buffergator'  " Buffer manager <leader>bl
 Plug 'bling/vim-airline'              " Fancy status line
@@ -45,6 +48,7 @@ Plug 'vim-airline/vim-airline-themes' " Pretty status line colors
 Plug 'editorconfig/editorconfig-vim'  " Support .editorconfig
 Plug 'voldikss/vim-floaterm'
 Plug 'luochen1990/rainbow'
+Plug 'github/copilot.vim'
 " Plug 'idanarye/vim-vebugger'          " Integrate various debuggers
 
 " Color Schemes
@@ -63,7 +67,6 @@ Plug 'godlygeek/tabular'           " Align text
 Plug 'Raimondi/delimitMate'        " Auto close quotes/parentheses
 Plug 'jiangmiao/auto-pairs'
 
-
 " Search
 Plug 'mileszs/ack.vim'            " :Ack
 Plug 'junegunn/fzf'               " Fuzzy finder
@@ -72,6 +75,7 @@ Plug 'haya14busa/incsearch.vim'   " Incremental search
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " VIM motions on speed
@@ -120,6 +124,7 @@ set shiftwidth=4   " amount of spaces when shifting
 
 set listchars=tab:\¬\ ,trail:~,extends:»,precedes:» " show hard tabs, trailing whitespace, etc
 set list
+" overmapped
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Tab completion settings
@@ -131,10 +136,10 @@ set wildignore+=*.rbc         " Ignore Rubinius compiled files
 set wildignore+=*.swp         " Ignore vim backups
 
 " Moving lines and blocks
-nnoremap <silent> [e :m -2<CR>==
-nnoremap <silent> ]e :m +1<CR>==
-vnoremap <silent> [e :m '<-2<CR>gv=gv
-vnoremap <silent> ]e :m '>+1<CR>gv=gv
+nnoremap <silent> 'e :m -2<CR>==
+nnoremap <silent> 'd :m +1<CR>==
+vnoremap <silent> 'e :m '<-2<CR>gv=gv
+vnoremap <silent> 'd :m '>+1<CR>gv=gv
 
 " Relative line numbers
 set number
@@ -304,6 +309,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
 " -------------------------------------------------------------------------------------------------
+"  coc-snippets
+" -------------------------------------------------------------------------------------------------
+
+" -------------------------------------------------------------------------------------------------
 "  vim-go
 " -------------------------------------------------------------------------------------------------
 
@@ -316,6 +325,15 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_fields = 1
 
 nmap <silent> <F9> :GoDebugBreakpoint<CR>
+
+" Run all tests in current file
+autocmd BufEnter *.go nmap <leader>q  <Plug>(go-test)
+
+" Run the current test function
+autocmd BufEnter *.go nmap <leader>qf <Plug>(go-test-func)
+
+" Toggle code coverate profile
+autocmd BufEnter *.go nmap <leader>qv  <Plug>(go-coverage-toggle)
 
 " -------------------------------------------------------------------------------------------------
 "  Tagbar
@@ -386,6 +404,14 @@ nmap <leader>tf :NERDTreeFind<CR>
 " don;t show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
+" -------------------------------------------------------------------------------------------------
+" NERDCommenter
+" -------------------------------------------------------------------------------------------------
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
 
 " -------------------------------------------------------------------------------------------------
 " FZF
@@ -397,7 +423,6 @@ let g:fzf_buffers_jump = 1
 
 nmap <C-p> :call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))<CR>
 nmap <Leader>b :Buffers<CR>
-nmap <Leader>a :Ag --python
 
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
