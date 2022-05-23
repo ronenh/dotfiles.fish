@@ -1,6 +1,6 @@
 [cmd_duration]
 min_time = 500
-format = "[$duration]($style) "
+format = " [$duration]($style) "
 
 [directory]
 read_only = " "
