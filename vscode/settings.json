@@ -117,7 +117,7 @@
 		"dlvLoadConfig": {
 			"followPointers": true,
 			"maxVariableRecurse": 1,
-			"maxStringLen": 64,
+			"maxStringLen": 500,
 			"maxArrayValues": 64,
 			"checkGoVersion": false,
 			"maxStructFields": -1
@@ -142,5 +142,6 @@
 	"vim.smartRelativeLine": true,
 	"compareFolders.excludeFilter": [
 		"**/.git"
-	]
+	],
+	"editor.accessibilitySupport": "off"
 }
