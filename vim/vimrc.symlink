@@ -61,7 +61,7 @@ Plug 'dracula/vim', {'as': 'dracula'}
 " Editing tools
 Plug 'scrooloose/nerdcommenter'   " Code commenter
 Plug 'tpope/vim-surround'         " Quoting/parenthesizing
-Plug 'tpope/vim-unimpaired'
+" Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/yaifa.vim'       " Auto detect indentation
 Plug 'godlygeek/tabular'           " Align text
 Plug 'Raimondi/delimitMate'        " Auto close quotes/parentheses
@@ -154,7 +154,7 @@ function! NumberToggle()
 endfunc
 
 " Ctrl+n toggles between relative and absolute line numbers
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-S-n> :call NumberToggle()<cr>
 
 " Switch to absolute line number when vim loses focus
 :au FocusLost * :set norelativenumber
@@ -249,24 +249,27 @@ set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" Use <cr> to confirm completion.
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -412,6 +415,16 @@ let g:NERDSpaceDelims = 1
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+
+
+" -------------------------------------------------------------------------------------------------
+" Auto Pairs
+" -------------------------------------------------------------------------------------------------
+" Use hyper key as modifier
+let g:AutoPairsShortcutToggle = '<M-S-C-p>'
+let g:AutoPairsShortcutFastWrap = '<M-S-C-e>'
+let g:AutoPairsShortcutJump = '<M-S-C-n>'
+let g:AutoPairsShortcutBackInsert= '<M-S-C-b>'
 
 " -------------------------------------------------------------------------------------------------
 " FZF
