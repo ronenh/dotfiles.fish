@@ -14,11 +14,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 " Languages
 Plug 'fatih/vim-go'
 "Plug 'python-mode/python-mode'    " Python
-Plug 'pangloss/vim-javascript'    " JavaScript
-Plug 'leafgarland/typescript-vim' " TypeScript
+" Plug 'pangloss/vim-javascript'    " JavaScript
+" Plug 'leafgarland/typescript-vim' " TypeScript
 Plug 'maxmellon/vim-jsx-pretty'   " JSX
 Plug 'jparise/vim-graphql'        " GraphQL
 Plug 'dag/vim-fish'               " Fish shell
+Plug 'HiPhish/jinja.vim'          " Jinja
 
 " Plug 'derekwyatt/vim-scala'       " Scala
 " Plug 'neovimhaskell/haskell-vim'  " Haskell
@@ -310,6 +311,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " -------------------------------------------------------------------------------------------------
 "  coc-snippets
