@@ -7,7 +7,7 @@
 	st = status -s -b
 
 	# show recent branches
-	short-recent = "for-each-ref --count=25 --sort=committerdate refs/heads/ --format='%(refname:short)'"
+	short-recent = "for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
 	# fuzzy switch branch...  /fish/functions/fco.fish seems better
 	fco = "!git short-recent | fzf --print0 | xargs -0 -t git checkout"
