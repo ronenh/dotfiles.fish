@@ -1,4 +1,3 @@
-#!/usr/bin/env fish
 if command -qa lsd
 	abbr -a ls 'lsd'
 	abbr -a lg 'lsd -lA --git'

@@ -23,11 +23,6 @@ end
 		#and git config --global mergetool.vscode.cmd "code --wait $MERGED"
 #end
 
-if command -qs gh
-	abbr -a 'grv' 'gh repo view -w'
-	abbr -a 'gpv' 'gh pr view -w'
-end
-
 #abbr -a gl 'git pull --prune'
 #abbr -a glg "git log --graph --decorate --oneline --abbrev-commit"
 #abbr -a glga "glg --all"
