@@ -93,7 +93,7 @@ For both Linux and macOS:
 - [`bat`](https://github.com/sharkdp/bat) a `cat` with wings;
 - [`delta`](https://github.com/dandavison/delta) for better git diffs;
 - [`dog`](https://dns.lookup.dog) the command-line DNS client;
-- [`exa`](https://the.exa.website) a modern replacement for `ls`;
+- [`lsd`](https://github.com/lsd-rs/lsd) a modern replacement for `ls`;
 - [`fd`](https://github.com/sharkdp/fd) a simple, fast and user-friendly alternative to `find`;
 - [`fzf`](https://github.com/junegunn/fzf) for a fuzzy-finder, used in `,t` on vim, for example;
 - [`gh`](https://github.com/cli/cli) for more GitHub integration with the terminal;
@@ -106,7 +106,7 @@ For both Linux and macOS:
 To install them all with `brew`:
 
 ```console
-$ brew install fish bat git-delta dog exa fd fzf gh grc kubectx ripgrep starship zoxide
+$ brew install fish bat git-delta dog lsd fd fzf gh grc kubectx ripgrep starship zoxide
 ```
 
 On Ubuntu:

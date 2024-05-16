@@ -106,7 +106,15 @@ function install_dotfiles
 		or abort nvim
 	link_file $DOTFILES_ROOT/fish/config.fish $HOME/.config/fish/config.fish backup
 		or abort fish
+	link_file $DOTFILES_ROOT/fish/dracula.theme $HOME/.config/fish/themes/dracula.theme backup
+		or abort fish
 	link_file $DOTFILES_ROOT/vifm/vifmrc $HOME/.config/vifm/vifmrc backup
+		or abort fish
+	link_file $DOTFILES_ROOT/lvim $HOME/.config/lvim
+		or abort fish
+	link_file $DOTFILES_ROOT/lsd/config.yaml $HOME/.config/lsd/config.yaml backup
+		or abort fish
+
 end
 
 curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher

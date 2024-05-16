@@ -143,5 +143,9 @@
 	"compareFolders.excludeFilter": [
 		"**/.git"
 	],
-	"editor.accessibilitySupport": "off"
+	"editor.accessibilitySupport": "off",
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"window.zoomLevel": 1
 }

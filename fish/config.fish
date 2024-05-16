@@ -6,4 +6,4 @@ if status is-interactive
 end
 
 source ~/.secrets
-# fish_add_path /opt/homebrew/opt/postgresql@12/bin
+rvm default

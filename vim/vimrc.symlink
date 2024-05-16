@@ -9,6 +9,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
 
 
 " Languages
@@ -20,6 +22,10 @@ Plug 'maxmellon/vim-jsx-pretty'   " JSX
 Plug 'jparise/vim-graphql'        " GraphQL
 Plug 'dag/vim-fish'               " Fish shell
 Plug 'HiPhish/jinja.vim'          " Jinja
+Plug 'OmniSharp/omnisharp-vim'    " .NET
+Plug 'vim-ruby/vim-ruby'          " Ruby
+Plug 'dylon/vim-antlr'            " ANTLR
+Plug 'towolf/vim-helm'            " Helm
 
 " Plug 'derekwyatt/vim-scala'       " Scala
 " Plug 'neovimhaskell/haskell-vim'  " Haskell
@@ -35,6 +41,7 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 
 " Snippets
@@ -123,6 +130,8 @@ set tabstop=4      " tabs witdth in spaces
 set softtabstop=4  " soft tab width
 set shiftwidth=4   " amount of spaces when shifting
 
+set textwidth=0    " don't wrap lines
+
 set listchars=tab:\¬\ ,trail:~,extends:»,precedes:» " show hard tabs, trailing whitespace, etc
 set list
 " overmapped
@@ -158,8 +167,8 @@ endfunc
 nnoremap <C-S-n> :call NumberToggle()<cr>
 
 " Switch to absolute line number when vim loses focus
-:au FocusLost * :set norelativenumber
-:au FocusGained * :set relativenumber
+" :au FocusLost * :set norelativenumber
+" :au FocusGained * :set relativenumber
 
 " Switch to absolute line numbers in edit mode
 autocmd InsertEnter * :set norelativenumber
@@ -313,6 +322,11 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+" Sort imports on save in python files
+autocmd BufWritePre *.py silent! :call CocAction('runCommand', 'python.sortImports')
+
+let g:OmniSharp_server_use_net6 = 1
+
 " -------------------------------------------------------------------------------------------------
 "  coc-snippets
 " -------------------------------------------------------------------------------------------------
@@ -399,13 +413,23 @@ let g:pymode_options_max_line_length = 99
 let g:pymode_virtualenv = 1
 
 " -------------------------------------------------------------------------------------------------
+" nvim-tree
+" -------------------------------------------------------------------------------------------------
+lua << EOF
+require("nvim-tree").setup()
+EOF
+
+map <F3> :NvimTreeToggle<CR>
+nmap <leader>tf :NvimTreeFindFile<CR>
+
+" -------------------------------------------------------------------------------------------------
 " NERDTree
 " -------------------------------------------------------------------------------------------------
 
 " toggle nerdtree display
-map <F3> :NERDTreeToggle<CR>
+" map <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
-nmap <leader>tf :NERDTreeFind<CR>
+" nmap <leader>tf :NERDTreeFind<CR>
 " don;t show these file types
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
@@ -431,7 +455,7 @@ let g:AutoPairsShortcutBackInsert= '<M-S-C-b>'
 " -------------------------------------------------------------------------------------------------
 " FZF
 " -------------------------------------------------------------------------------------------------
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -527,3 +551,5 @@ let g:floaterm_keymap_toggle = '<leader>tt'
 let g:floaterm_keymap_new = '<leader>tn'
 let g:floaterm_keymap_prev = '<leader>tk'
 let g:floaterm_keymap_next = '<leader>tj'
+let g:floaterm_height = 0.8
+let g:floaterm_width = 0.9
