@@ -6,12 +6,3 @@ if command -qs gh
 		gh extension install $ext || true
 	end
 end
-
-switch (uname)
-case Darwin
-	mkdir -p "$HOME/Library/Application Support/prs"
-	ln -sf "$DOTFILES/gh/prs.yml" "$HOME/Library/Application Support/prs/sections.yml"
-case Linux
-	mkdir -p "$HOME/.config/prs"
-	ln -sf "$DOTFILES/gh/prs.yml" "$HOME/.config/prs/sections.yml"
-end

@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/Users/ronenhilewicz/aserto-dev/kube-infra/aserto-dsprev'
-let g:netrw_dirhist_3='/Users/ronenhilewicz/aserto-dev/kube-infra/aserto-directory'
-let g:netrw_dirhist_2='/Users/ronenhilewicz/aserto-dev/aserto'
-let g:netrw_dirhist_1='/Users/ronenhilewicz/aserto-dev/asertx'

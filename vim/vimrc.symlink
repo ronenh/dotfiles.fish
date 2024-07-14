@@ -77,7 +77,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " Search
 Plug 'mileszs/ack.vim'            " :Ack
-Plug 'junegunn/fzf'               " Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }               " Fuzzy finder
 Plug 'junegunn/fzf.vim'           " FZF helpers (:Ag :Rg :Lines etc.)
 Plug 'haya14busa/incsearch.vim'   " Incremental search
 
