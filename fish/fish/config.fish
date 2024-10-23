@@ -7,4 +7,5 @@ end
 
 source ~/.secrets
 load_nvm > /dev/stderr
+eval ($XDG_CONFIG_HOME/kitty/colors dark)
 # rvm default

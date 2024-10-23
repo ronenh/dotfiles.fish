@@ -94,6 +94,7 @@ function install_dotfiles
 
 	for package in $DOTFILES_ROOT/*/
 		stow -R -t ~/.config (basename $package) --ignore install\.fish --ignore '.*\.symlink' --ignore '\.DS_Store'
+			and success (basename $package)
 	end
 
 	# link_file $DOTFILES_ROOT/fisher/plugins $__fish_config_dir/fish_plugins backup

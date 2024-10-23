@@ -100,15 +100,15 @@ Plug 'will133/vim-dirdiff'
 call plug#end()
 
 
-let mapleader=","           " The <leader> key
-set nocompatible            " disable compatibility to old-time vi
-set showmatch               " show matching brackets.
-set mouse=a                 " mouse scrolling and enterin visual mode
-set autoindent              " indent a new line the same amount as the line just typed
-set termguicolors           " set term gui colors
-set autoread                " auto reload files on changes
-set scrolloff=3             " keep 3 context lines around the viewport
-set ls=2                    " always show status bar
+" let mapleader=","           " The <leader> key
+" set nocompatible            " disable compatibility to old-time vi
+" set showmatch               " show matching brackets.
+" set mouse=a                 " mouse scrolling and enterin visual mode
+" set autoindent              " indent a new line the same amount as the line just typed
+" set termguicolors           " set term gui colors
+" set autoread                " auto reload files on changes
+" set scrolloff=3             " keep 3 context lines around the viewport
+" set ls=2                    " always show status bar
 
 " Backup
 "execute "set directory=" . g:vim_home_path . "/swap"
@@ -119,69 +119,71 @@ set ls=2                    " always show status bar
 "set writebackup
 
 " Search settings
-set hlsearch    " highlight results
-set ignorecase  " ignore case
-set incsearch   " show results while typing
-set smartcase   " smart case sentiviness
+" set hlsearch    " highlight results
+" set ignorecase  " ignore case
+" set incsearch   " show results while typing
+" set smartcase   " smart case sentiviness
 
 " Tab settings
-set expandtab      " expand tabs to the proper size
-set tabstop=4      " tabs witdth in spaces
-set softtabstop=4  " soft tab width
-set shiftwidth=4   " amount of spaces when shifting
+" set expandtab      " expand tabs to the proper size
+" set tabstop=4      " tabs witdth in spaces
+" set softtabstop=4  " soft tab width
+" set shiftwidth=4   " amount of spaces when shifting
 
-set textwidth=0    " don't wrap lines
+" set textwidth=0    " don't wrap lines
 
-set listchars=tab:\¬\ ,trail:~,extends:»,precedes:» " show hard tabs, trailing whitespace, etc
-set list
+" set listchars=tab:\¬\ ,trail:~,extends:»,precedes:» " show hard tabs, trailing whitespace, etc
+" set list
 " overmapped
-nmap <silent> <leader>s :set nolist!<CR>
+" nmap <silent> <leader>s :set nolist!<CR>
 
 " Tab completion settings
-set wildmode=list:longest     " Wildcard matches show a list, matching the longest first
-set wildignore+=.git,.hg,.svn " Ignore version control repos
-set wildignore+=*.6           " Ignore Go compiled files
-set wildignore+=*.pyc         " Ignore Python compiled files
-set wildignore+=*.rbc         " Ignore Rubinius compiled files
-set wildignore+=*.swp         " Ignore vim backups
+" set wildmode=list:longest     " Wildcard matches show a list, matching the longest first
+" set wildignore+=.git,.hg,.svn " Ignore version control repos
+" set wildignore+=*.6           " Ignore Go compiled files
+" set wildignore+=*.pyc         " Ignore Python compiled files
+" set wildignore+=*.rbc         " Ignore Rubinius compiled files
+" set wildignore+=*.swp         " Ignore vim backups
 
-" Moving lines and blocks
-nnoremap <silent> 'e :m -2<CR>==
-nnoremap <silent> 'd :m +1<CR>==
-vnoremap <silent> 'e :m '<-2<CR>gv=gv
-vnoremap <silent> 'd :m '>+1<CR>gv=gv
+" " Moving lines and blocks
+" nnoremap <silent> 'e :m -2<CR>==
+" nnoremap <silent> 'd :m +1<CR>==
+" vnoremap <silent> 'e :m '<-2<CR>gv=gv
+" vnoremap <silent> 'd :m '>+1<CR>gv=gv
 
-" Relative line numbers
-set number
-set relativenumber
+" " Relative line numbers
+" set number
+" set relativenumber
 
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
+" function! NumberToggle()
+"   if(&relativenumber == 1)
+"     set norelativenumber
+"   else
+"     set relativenumber
+"   endif
+" endfunc
 
-" Ctrl+n toggles between relative and absolute line numbers
-nnoremap <C-S-n> :call NumberToggle()<cr>
+" " " Ctrl+n toggles between relative and absolute line numbers
+" nnoremap <C-S-n> :call NumberToggle()<cr>
 
-" Switch to absolute line number when vim loses focus
-" :au FocusLost * :set norelativenumber
-" :au FocusGained * :set relativenumber
+" " Switch to absolute line number when vim loses focus
+" " :au FocusLost * :set norelativenumber
+" " :au FocusGained * :set relativenumber
 
-" Switch to absolute line numbers in edit mode
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+" " Switch to absolute line numbers in edit mode
+" autocmd InsertEnter * :set norelativenumber
+" autocmd InsertLeave * :set relativenumber
 
-" Colors
-set background=dark
+" " Colors
+" set background=dark
 
-if has("termguicolors")
-  set termguicolors
-endif
+" if has("termguicolors")
+"   set termguicolors
+" endif
 
-colorscheme dracula
+" colorscheme dracula
+
+" MARKER: init.lua
 
 " Toggle Quickfix and Location lists
 function! GetBufferList()
@@ -217,23 +219,25 @@ nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <Leader>rm :call delete(@%)
 
 " yank to clipboard by default
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " easier split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 " more natural split opening
-set splitbelow
-set splitright
+" set splitbelow
+" set splitright
 
-nmap <silent> <leader>z :bprevious<CR>:bdelete #<CR>
+" nmap <silent> <leader>z :bprevious<CR>:bdelete #<CR>
 
 
-filetype plugin indent on   " allows auto-indenting depending on file type
-syntax on                   " syntax highlighting
+" MARKER: not ported
+" filetype plugin indent on   " allows auto-indenting depending on file type
+" syntax on                   " syntax highlighting
+" ------------------------------------------------------------
 
 
 " Find files using Telescope command-line sugar.
