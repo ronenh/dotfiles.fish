@@ -13,6 +13,8 @@ return {
 				'css',
 				'fish',
 				'go',
+				'graphql',
+				'helm',
 				'java',
 				'javascript',
 				'json',

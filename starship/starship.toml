@@ -98,9 +98,3 @@ symbol = " "
 
 [swift]
 symbol = "ﯣ "
-
-[custom.aserto]
-command = 'echo $ASERTO_ENV'
-files = ["magefile.go"]
-style = "blue"
-format = '[(in Aserto $output )]($style)'

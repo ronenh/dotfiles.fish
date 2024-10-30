@@ -57,17 +57,26 @@ return {
 					vim.b[bufnr].autoimport = true
 				end,
 			},
-			lua_ls = {
+			helm_ls = {
 				settings = {
-					Lua = {
-						workspace = { checkThirdParty = false },
-						telemetry = { enable = false },
+					helm_ls = {
+						yamlLanguageServer = {
+							path = 'yaml-language-server',
+						},
 					},
 				},
 			},
 			jsonls = {
 				settings = {
 					jsonls = {}
+				},
+			},
+			lua_ls = {
+				settings = {
+					Lua = {
+						workspace = { checkThirdParty = false },
+						telemetry = { enable = false },
+					},
 				},
 			},
 		},

@@ -1,10 +1,11 @@
--- local colorscheme = os.getenv('NVIM_COLORSCHEME') or "base16-ashes"
-vim.cmd("colorscheme " .. 'base16-ashes')
--- vim.o.background = os.getenv('NVIM_COLORSCHEME_BG') or "dark"
-vim.o.background = "dark"
+local colorscheme = os.getenv('NVIM_COLORSCHEME') or "base16-ashes"
+vim.cmd("colorscheme " .. colorscheme)
+vim.o.background = os.getenv('NVIM_COLORSCHEME_BG') or "dark"
 
 
-
+function Termco(id)
+	return vim.g['terminal_color_' .. id]
+end
 
 -- -- Read colorscheme from $XDG_CONFIG_HOME/.base16_theme
 -- local xdg_config = vim.env.XDG_CONFIG_HOME or '$HOME/.config'

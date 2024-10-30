@@ -20,6 +20,7 @@ return {
 				'dockerls',
 				'gopls',
 				'graphql',
+				'helmls',
 				'html',
 				'jsonls',
 				'tsserver',
