@@ -28,5 +28,4 @@ require('lazy').setup(
 	}
 )
 
--- Colors
-require("user.colors")
+vim.cmd("colorscheme rose-pine")

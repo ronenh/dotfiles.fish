@@ -36,7 +36,7 @@ end
 
 return {
 	'neovim/nvim-lspconfig',
-	ft = { 'lua', 'go', 'json' },
+	ft = { 'go', 'json', 'lua', 'python', 'yaml', 'java' },
 	dependencies = {
 		'williamboman/mason-lspconfig.nvim',
 		'hrsh7th/cmp-nvim-lsp',
@@ -78,6 +78,43 @@ return {
 						telemetry = { enable = false },
 					},
 				},
+			},
+			pylsp = {
+				settings = {
+					pylsp = {
+						plugins = {
+							-- formatter options
+							black = { enabled = true },
+							autopep8 = { enabled = false },
+							yapf = { enabled = false },
+							-- linter options
+							pylint = { enabled = true, executable = "pylint" },
+							pyflakes = { enabled = false },
+							pycodestyle = { enabled = false },
+							-- type checker
+							pylsp_mypy = { enabled = true },
+							-- auto-completion options
+							jedi_completion = { fuzzy = true },
+							-- import sorting
+							pyls_isort = { enabled = true },
+						},
+					}
+				},
+			},
+			jdtls = {
+				settings = {
+					java = {
+						configuration = {
+							runtimes = {
+								{
+									name = 'Java-22',
+									path = '/Library/Java/JavaVirtualMachines/jdk-22.0.2.jdk',
+									default = true,
+								},
+							}
+						}
+					}
+				}
 			},
 		},
 	},

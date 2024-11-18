@@ -8,7 +8,10 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	keys = {
-		{ '<F3>', '<cmd>Neotree filesystem toggle reveal left<cr>', desc = 'Open Filesystem in Neo-Tree' },
+		{ '<leader>aa', '<cmd>Neotree filesystem show reveal_force_cwd left<cr>',   desc = 'Reveal current file in Neo-Tree' },
+		{ '<leader>as', '<cmd>Neotree filesystem toggle reveal_force_cwd left<cr>', desc = 'Open Filesystem in Neo-Tree' },
+		{ '<leader>ad', '<cmd>Neotree git_status toggle reveal left<cr>',           desc = 'Open Git status in Neo-Tree' },
+		{ '<leader>af', '<cmd>Neotree buffers toggle reveal left<cr>',              desc = 'Open buffers in Neo-Tree' },
 	},
 	config = function()
 		-- If you want icons for diagnostic errors, you'll need to define them somewhere:
@@ -214,7 +217,7 @@ return {
 				},
 				follow_current_file = {
 					enabled = false,        -- This will find and focus the file in the active buffer every time
-					--               -- the current file is changed while the tree is open.
+					-- the current file is changed while the tree is open.
 					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 				},
 				group_empty_dirs = false,   -- when true, empty folders will be grouped together

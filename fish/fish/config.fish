@@ -10,5 +10,6 @@ if status is-interactive
 end
 
 source ~/.secrets
+nvm use default
 # load_nvm > /dev/stderr
 # rvm default
