@@ -10,6 +10,9 @@ if status is-interactive
 end
 
 source ~/.secrets
-nvm use default
+nvm use default > /dev/null
 # load_nvm > /dev/stderr
 # rvm default
+
+# Created by `pipx` on 2024-12-06 13:01:53
+set PATH $PATH /Users/ronenhilewicz/.local/bin

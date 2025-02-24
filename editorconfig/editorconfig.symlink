@@ -13,10 +13,10 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
-[*.{rb,yaml,yml,json}]
+[*.{js,rb,yaml,yml,json,rego}]
 indent_style = space
 indent_size = 2
 
-[*.{py,pyi}]
+[*.{py,pyi,java,xml,g4}]
 indent_style = space
 indent_size = 4
