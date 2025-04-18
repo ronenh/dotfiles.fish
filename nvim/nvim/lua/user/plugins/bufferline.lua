@@ -1,4 +1,5 @@
 return {
+	-- A snazzy line (with tabpage integration) for Neovim built using lua.
 	'akinsho/bufferline.nvim',
 	version = "*",
 	dependencies = 'nvim-tree/nvim-web-devicons',

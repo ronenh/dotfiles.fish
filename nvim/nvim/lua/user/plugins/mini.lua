@@ -1,4 +1,6 @@
 return {
+	{ 'echasnovski/mini.icons', version = false },
+	{ 'echasnovski/mini.move',  version = '*',  config = true },
 	-- {
 	-- 	'echasnovski/mini.pairs',
 	-- 	event = 'InsertEnter',

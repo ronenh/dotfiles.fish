@@ -8,6 +8,7 @@ opt.autoread = true      -- auto reload files on changes
 opt.scrolloff = 3        -- keep 3 context lines around the viewport
 opt.laststatus = 2       -- always show status bar
 opt.textwidth = 0        -- don't wrap lines
+opt.cmdheight = 0        -- hide command line when not used
 
 
 -- Search settings

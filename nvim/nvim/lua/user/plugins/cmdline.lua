@@ -1,4 +1,5 @@
 return {
+	--  a wildmenu replacement which brings Helix's command-line to Neovim
 	'vzze/cmdline.nvim',
 	event = "VeryLazy",
 	config = function()

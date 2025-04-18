@@ -16,3 +16,10 @@ keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Switch to right window' })
 
 -- Close the currnet buffer and move to the previous one
 keymap.set('n', '<leader>z', ':bp<CR>:bd #<CR>', { desc = 'Close the current buffer', silent = true })
+
+keymap.set({ 'n', 'x' }, '<leader>d', '"_d', { desc = 'Delete without yanking to default register' })
+keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste default register over selection' })
+
+-- Move blocks of selected lines up and down
+-- keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- keymap.set("v", "K", ":m '<-2<CR>gv=gv")

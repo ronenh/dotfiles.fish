@@ -10,8 +10,8 @@ local on_attach = function(client, bufnr)
 	keymap('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
 	keymap('n', 'gr', vim.lsp.buf.references, { desc = 'List references' })
 
-	keymap('n', '<leader>ds', vim.lsp.buf.document_symbol, { desc = 'List document symbols' })
-	keymap('n', '<leader>ws', vim.lsp.buf.workspace_symbol, { desc = 'List workspace symbols' })
+	-- keymap('n', '<leader>ds', vim.lsp.buf.document_symbol, { desc = 'List document symbols' })
+	-- keymap('n', '<leader>ws', vim.lsp.buf.workspace_symbol, { desc = 'List workspace symbols' })
 
 	keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Show documentation' })
 	keymap('n', 'gK', vim.lsp.buf.signature_help, { desc = 'Show signature' })
@@ -50,6 +50,7 @@ return {
 						analyses = {
 							unusedparams = true,
 						},
+						gofumpt = true,
 						staticcheck = true,
 					},
 				},
@@ -92,7 +93,11 @@ return {
 							pyflakes = { enabled = false },
 							pycodestyle = { enabled = false },
 							-- type checker
-							pylsp_mypy = { enabled = true },
+							pylsp_mypy = {
+								enabled = true,
+								dmypy = true,
+								-- overrides = { "--python-executable", py_path(), true },
+							},
 							-- auto-completion options
 							jedi_completion = { fuzzy = true },
 							-- import sorting

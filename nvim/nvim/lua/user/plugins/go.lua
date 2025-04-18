@@ -1,5 +1,7 @@
 return {
-	"ray-x/go.nvim",
+	-- "ray-x/go.nvim",
+	"ryancragun/go.nvim",
+	branch = "golangci-lint-v2",
 	dependencies = { -- optional packages
 		"ray-x/guihua.lua",
 		"neovim/nvim-lspconfig",

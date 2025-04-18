@@ -16,3 +16,7 @@ nvm use default > /dev/null
 
 # Created by `pipx` on 2024-12-06 13:01:53
 set PATH $PATH /Users/ronenhilewicz/.local/bin
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/ronenhilewicz/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
